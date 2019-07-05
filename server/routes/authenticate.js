@@ -14,7 +14,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.json({ type: 'application/*+json' }));
 
 
-mongoose.connect('mongodb://localhost:27017/foodcourt', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/foodcourt', {useNewUrlParser: true});
 
 router.post('/', (req, res) => {
     if (req.body) {
