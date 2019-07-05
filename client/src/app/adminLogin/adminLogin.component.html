@@ -1,0 +1,31 @@
+
+<div style="text-align:center">
+  <h3>Admin Login</h3>
+  <div >
+    <table align="center">
+      <tr>
+        <td><label for="user">User : </label>
+         </td>
+         <td>   <input type="text" placeholder="login" [(ngModel)]="user">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password">Password : </label>
+           </td>
+           <td><input type="password" placeholder="password" [(ngModel)]="password" />
+            </td>
+          </tr>
+    </table>
+
+
+
+  </div>
+  <div class="spacer">
+    <button  type="submit" *ngIf="user.length && password.length" (click)="Login()">Login</button>
+    <br/>
+    <a class="nav-link" routerLink="../addadmin" routerLinkActive="active">Register</a>
+    <br/>
+    <label class="errormsg">{{authService.getMessage}}</label>
+  </div>
+</div>
+
